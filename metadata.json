@@ -1,0 +1,6 @@
+{
+  "name": "La Entrada a las Matemáticas: Fundamentos Básicos",
+  "description": "Comprende visualmente qué son las fracciones con pasteles interactivos y domina la suma, resta, multiplicación y división sin memorizar trucos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

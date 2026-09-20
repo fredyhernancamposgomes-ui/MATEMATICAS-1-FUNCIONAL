@@ -17,21 +17,21 @@ export const PrecisionPie: React.FC<PrecisionPieProps> = ({
   size = 180,
   interactive = false,
   onSliceClick,
-  theme = 'chalkboard',
+  theme = 'paper',
   label,
   id,
 }) => {
   const center = size / 2;
   const radius = size * 0.42;
 
-  // Temas visuales limpios tipo pizarrón / compás
-  const isChalk = theme === 'chalkboard';
+  // Paleta de tiza limpia sobre pizarra verde mate
+  const strokeColor = '#4a7559';
+  const diskBg = 'rgba(255, 255, 255, 0.03)';
+  const activeSliceFill = 'rgba(253, 224, 71, 0.75)'; // Tiza amarillo suave
+  const activeSliceStroke = '#fef08a';
+  const inactiveSliceFill = 'rgba(255, 255, 255, 0.04)';
 
-  const strokeColor = isChalk ? 'rgba(255, 255, 255, 0.4)' : '#334155';
-  const diskBg = isChalk ? 'rgba(255, 255, 255, 0.05)' : '#f8fafc';
-  const activeSliceFill = isChalk ? 'rgba(251, 191, 36, 0.85)' : '#0f172a'; // Tiza dorada limpia o tinta grafito
-  const activeSliceStroke = isChalk ? '#fde68a' : '#020617';
-  const inactiveSliceFill = isChalk ? 'rgba(255, 255, 255, 0.04)' : '#ffffff';
+  const isPaperTheme = theme === 'paper';
 
   const slices = [];
   const anglePerSlice = (2 * Math.PI) / Math.max(1, totalSlices);
@@ -85,7 +85,7 @@ export const PrecisionPie: React.FC<PrecisionPieProps> = ({
           fill={diskBg}
           stroke={strokeColor}
           strokeWidth={1}
-          strokeDasharray={isChalk ? '3 3' : 'none'}
+          strokeDasharray={isPaperTheme ? 'none' : '3 3'}
         />
 
         {/* Sectores angulares */}
@@ -96,16 +96,12 @@ export const PrecisionPie: React.FC<PrecisionPieProps> = ({
           cx={center}
           cy={center}
           r={2.5}
-          fill={isChalk ? '#ffffff' : '#0f172a'}
+          fill="#fef08a"
         />
       </svg>
 
       {label && (
-        <span
-          className={`text-xs mt-1 font-mono tracking-tight ${
-            isChalk ? 'text-slate-400' : 'text-slate-600'
-          }`}
-        >
+        <span className="text-xs mt-1 font-mono tracking-tight text-[#d2e2d7]">
           {label}
         </span>
       )}

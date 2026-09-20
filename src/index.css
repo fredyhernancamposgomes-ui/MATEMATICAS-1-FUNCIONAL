@@ -2,8 +2,18 @@
 
 body {
   font-family: 'Outfit', sans-serif;
+  background-color: #15271d;
+  color: #e8eee9;
 }
 
 .font-math {
   font-family: 'JetBrains Mono', monospace;
 }
+
+/* Textura sutil y relajante de pizarra verde mate */
+.chalkboard-surface {
+  background-color: #13251b;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+

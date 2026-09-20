@@ -25,28 +25,28 @@ export const GeometricPie: React.FC<GeometricPieProps> = ({
   const center = size / 2;
   const radius = size * 0.42;
 
-  // Paleta sobria tipo pizarra de tiza fina
+  // Paleta de tiza limpia sobre pizarra verde mate
   const colorMap = {
     amber: {
-      fill: 'rgba(251, 191, 36, 0.85)',
-      stroke: '#fde68a',
-      subStroke: 'rgba(251, 191, 36, 0.5)',
-      baseBorder: 'rgba(255, 255, 255, 0.6)',
-      pivot: '#fde68a',
+      fill: 'rgba(253, 224, 71, 0.75)', // Tiza amarilla cálida
+      stroke: '#fef08a',
+      subStroke: 'rgba(254, 240, 138, 0.4)',
+      baseBorder: '#4a7559',
+      pivot: '#fef08a',
     },
     emerald: {
-      fill: 'rgba(52, 211, 153, 0.85)',
+      fill: 'rgba(167, 243, 208, 0.75)', // Tiza menta suave
       stroke: '#a7f3d0',
-      subStroke: 'rgba(52, 211, 153, 0.5)',
-      baseBorder: 'rgba(255, 255, 255, 0.6)',
+      subStroke: 'rgba(167, 243, 208, 0.4)',
+      baseBorder: '#4a7559',
       pivot: '#a7f3d0',
     },
     chalk: {
-      fill: 'rgba(241, 245, 249, 0.8)',
-      stroke: '#ffffff',
-      subStroke: 'rgba(255, 255, 255, 0.4)',
-      baseBorder: 'rgba(255, 255, 255, 0.5)',
-      pivot: '#ffffff',
+      fill: 'rgba(245, 247, 242, 0.75)', // Tiza blanca pura
+      stroke: '#f5f7f2',
+      subStroke: 'rgba(245, 247, 242, 0.4)',
+      baseBorder: '#4a7559',
+      pivot: '#f5f7f2',
     },
   }[theme];
 
@@ -78,8 +78,8 @@ export const GeometricPie: React.FC<GeometricPieProps> = ({
       <path
         key={i}
         d={pathData}
-        fill={isFilled ? colorMap.fill : 'rgba(255, 255, 255, 0.03)'}
-        stroke={isFilled ? (isBaseCut ? colorMap.stroke : colorMap.subStroke) : 'rgba(255, 255, 255, 0.2)'}
+        fill={isFilled ? colorMap.fill : 'rgba(255, 255, 255, 0.04)'}
+        stroke={isFilled ? (isBaseCut ? colorMap.stroke : colorMap.subStroke) : 'rgba(255, 255, 255, 0.12)'}
         strokeWidth={isBaseCut ? 1.5 : 0.8}
         strokeDasharray={!isBaseCut && !isFilled ? '2 2' : 'none'}
         className="transition-all duration-300"
@@ -101,8 +101,8 @@ export const GeometricPie: React.FC<GeometricPieProps> = ({
           y1={center}
           x2={rx}
           y2={ry}
-          stroke="rgba(255, 255, 255, 0.8)"
-          strokeWidth={1.75}
+          stroke="#e8eee9"
+          strokeWidth={1.5}
         />
       );
     }
@@ -121,10 +121,9 @@ export const GeometricPie: React.FC<GeometricPieProps> = ({
           cx={center}
           cy={center}
           r={radius}
-          fill="rgba(255, 255, 255, 0.02)"
-          stroke="rgba(255, 255, 255, 0.3)"
+          fill="rgba(255, 255, 255, 0.03)"
+          stroke="#3d684e"
           strokeWidth={1}
-          strokeDasharray="3 3"
         />
 
         {/* Sectores */}
@@ -138,7 +137,7 @@ export const GeometricPie: React.FC<GeometricPieProps> = ({
       </svg>
 
       {label && (
-        <span className="text-[11px] font-mono text-slate-300 mt-1.5 text-center">
+        <span className="text-[11px] font-mono text-[#d2e2d7] mt-1.5 text-center font-medium">
           {label}
         </span>
       )}

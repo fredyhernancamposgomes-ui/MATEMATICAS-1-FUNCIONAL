@@ -77,47 +77,47 @@ export const DigitalBlackboard: React.FC = () => {
   return (
     <div className="w-full space-y-6">
       {/* BARRA SUPERIOR DE LA PIZARRA (CONTROLES DE NAVEGACIÓN CONTINUA) */}
-      <div className="bg-[#111827] border border-slate-800 rounded-2xl p-2 sm:p-2.5 shadow-xl flex flex-wrap items-center justify-between gap-2">
+      <div className="bg-[#14281c] border border-[#274b34] rounded-2xl p-2 sm:p-2.5 shadow-sm flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-1.5 sm:gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse ml-2" />
-          <span className="text-xs font-mono text-slate-300 font-semibold tracking-wider uppercase">
-            Pizarra Matemática Viva
+          <span className="w-2.5 h-2.5 rounded-full bg-[#fde047] animate-pulse ml-2" />
+          <span className="text-xs font-mono text-[#d2e2d7] font-semibold tracking-wider uppercase">
+            Pizarra de Aprendizaje
           </span>
         </div>
 
         <div className="flex items-center gap-1">
           <button
             onClick={() => setActiveSection('intro')}
-            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
               activeSection === 'intro'
-                ? 'bg-slate-800 text-amber-300 font-semibold border border-slate-700 shadow-xs'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                ? 'bg-[#254631] text-[#fef08a] font-bold border border-[#3b6b4c] shadow-xs'
+                : 'text-[#9eb6a7] hover:text-[#f5f7f2] hover:bg-[#1a3325]'
             }`}
           >
-            <span>1. El Origen</span>
+            <span>1. ¿Qué es una fracción?</span>
           </button>
 
           <button
             onClick={() => setActiveSection('identity')}
-            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
               activeSection === 'identity'
-                ? 'bg-slate-800 text-amber-300 font-semibold border border-slate-700 shadow-xs'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                ? 'bg-[#254631] text-[#fef08a] font-bold border border-[#3b6b4c] shadow-xs'
+                : 'text-[#9eb6a7] hover:text-[#f5f7f2] hover:bg-[#1a3325]'
             }`}
           >
-            <span>2. La Ley del 1</span>
+            <span>2. El truco del 1</span>
           </button>
 
           <button
             onClick={() => setActiveSection('workshop')}
-            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
               activeSection === 'workshop'
-                ? 'bg-slate-800 text-amber-300 font-semibold border border-slate-700 shadow-xs'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                ? 'bg-[#254631] text-[#fef08a] font-bold border border-[#3b6b4c] shadow-xs'
+                : 'text-[#9eb6a7] hover:text-[#f5f7f2] hover:bg-[#1a3325]'
             }`}
           >
             <Cpu className="w-3.5 h-3.5" />
-            <span>3. Taller Mecánico</span>
+            <span>3. Práctica interactiva</span>
           </button>
         </div>
       </div>
@@ -126,45 +126,45 @@ export const DigitalBlackboard: React.FC = () => {
       {/* SECCIÓN 1: EL ORIGEN — ¿POR QUÉ EXISTEN LAS FRACCIONES?                  */}
       {/* ========================================================================= */}
       {activeSection === 'intro' && (
-        <div className="bg-[#0b1120] border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl text-slate-100 space-y-8 animate-in fade-in duration-300">
+        <div className="bg-[#14281c] border border-[#274b34] rounded-3xl p-6 sm:p-10 shadow-md text-[#e8eee9] space-y-8 animate-in fade-in duration-300">
           
           {/* TÍTULO Y ARGUMENTO PRINCIPAL */}
           <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-[11px] font-mono text-amber-400 font-bold uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-md border border-amber-400/20">
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono text-[#fef08a] font-bold uppercase tracking-widest bg-[#1c3827] px-3 py-1 rounded-md border border-[#2e593e]">
               <Compass className="w-3.5 h-3.5" />
-              Fundamento 01: La Ruptura de la Unidad
+              Paso 01: Partir la comida en partes iguales
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              Los enteros cuentan cosas completas. Una fracción mide lo que se partió.
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#f5f7f2] tracking-tight leading-tight">
+              Los enteros cuentan cosas enteras. Las fracciones cuentan partes de algo.
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Si tienes 3 manzanas completas, dices <span className="font-mono text-amber-300 font-bold">3</span>. Pero si tienes <strong>una sola manzana</strong> y la repartes entre 4 personas, los números enteros se quedan mudos. Tuviste que inventar un símbolo con dos pisos:
+            <p className="text-sm sm:text-base text-[#bfd4c7] leading-relaxed">
+              Si tienes 3 panes completos, dices <span className="font-mono text-[#fef08a] font-bold">3</span>. Pero si tienes <strong>un solo pan</strong> y lo repartes entre 4 personas, ya no tienes panes enteros. Escribes dos números para saber qué pasó:
             </p>
           </div>
 
           {/* LA PIZARRA INTERACTIVA: EL COMPÁS Y LA FÓRMULA LATEX */}
-          <div className="bg-[#111c38]/60 border border-slate-800/90 rounded-2xl p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="bg-[#0f1f16] border border-[#23432e] rounded-2xl p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center shadow-inner">
             
             {/* LADO IZQUIERDO: EL DISCO / PASTEL GEOMÉTRICO */}
             <div className="flex flex-col items-center justify-center space-y-4">
-              <div className="relative p-2 bg-[#090e1a] rounded-2xl border border-slate-800 shadow-inner">
+              <div className="relative p-3 bg-[#162a1e] rounded-2xl border border-[#2b5138]">
                 <PrecisionPie
                   totalSlices={introDen}
                   filledSlices={introNum}
                   size={190}
                   interactive={true}
                   onSliceClick={(idx) => setIntroNum(idx + 1)}
-                  theme="chalkboard"
+                  theme="paper"
                 />
               </div>
 
               <div className="text-center space-y-1">
-                <span className="text-xs text-amber-300/90 font-mono block">
-                  Toca los sectores para tomarlos
+                <span className="text-xs text-[#fef08a] font-mono block font-medium">
+                  Toca las rebanadas para tomarlas o soltarlas
                 </span>
-                <span className="text-[11px] text-slate-400">
+                <span className="text-[11px] text-[#9eb6a7]">
                   Tomaste {introNum} de {introDen} partes iguales
                 </span>
               </div>
@@ -172,9 +172,9 @@ export const DigitalBlackboard: React.FC = () => {
 
             {/* LADO DERECHO: LA ANATOMÍA EN PIZARRA */}
             <div className="space-y-6">
-              <div className="flex items-center justify-center md:justify-start gap-4 p-4 bg-[#090e1a]/80 rounded-2xl border border-slate-800">
-                <span className="text-xs text-slate-400 font-mono uppercase tracking-wider">
-                  Notación exacta:
+              <div className="flex items-center justify-center md:justify-start gap-4 p-4 bg-[#162a1e] rounded-2xl border border-[#2b5138]">
+                <span className="text-xs text-[#9eb6a7] font-mono uppercase tracking-wider">
+                  En la pizarra:
                 </span>
                 <MathFraction
                   numerator={introNum}
@@ -185,31 +185,31 @@ export const DigitalBlackboard: React.FC = () => {
               </div>
 
               <div className="space-y-3 text-xs sm:text-sm">
-                <div className="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                <div className="bg-[#162a1e] p-3.5 rounded-xl border border-[#2b5138] space-y-1">
                   <div className="flex items-center justify-between font-mono">
-                    <span className="text-amber-300 font-bold">Número de arriba ({introNum}):</span>
-                    <span className="text-[11px] text-slate-500">Numerador</span>
+                    <span className="text-[#fde047] font-bold">Número de arriba ({introNum}):</span>
+                    <span className="text-[11px] text-[#8ea797]">Numerador</span>
                   </div>
-                  <p className="text-slate-300">
-                    Es el <strong>contador</strong>. Te dice cuántos pedazos tienes en la mano.
+                  <p className="text-[#c6dcce]">
+                    Cuántas rebanadas tomaste o tienes en tu plato.
                   </p>
                 </div>
 
-                <div className="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                <div className="bg-[#162a1e] p-3.5 rounded-xl border border-[#2b5138] space-y-1">
                   <div className="flex items-center justify-between font-mono">
-                    <span className="text-slate-100 font-bold">Número de abajo ({introDen}):</span>
-                    <span className="text-[11px] text-slate-500">Denominador</span>
+                    <span className="text-[#f5f7f2] font-bold">Número de abajo ({introDen}):</span>
+                    <span className="text-[11px] text-[#8ea797]">Denominador</span>
                   </div>
-                  <p className="text-slate-300">
-                    Es el <strong>calibre</strong>. Te dice en cuántas partes iguales se partió el entero.
+                  <p className="text-[#c6dcce]">
+                    En cuántas rebanadas iguales se cortó todo el pastel.
                   </p>
                 </div>
               </div>
 
               {/* Controles del dial del calibre */}
-              <div className="space-y-2 pt-2 border-t border-slate-800">
-                <span className="text-[11px] text-slate-400 font-mono uppercase block">
-                  Modifica el corte de la unidad (Denominador):
+              <div className="space-y-2 pt-2 border-t border-[#23432e]">
+                <span className="text-[11px] text-[#9eb6a7] font-mono uppercase block font-medium">
+                  Cambia en cuántos pedazos cortas el pastel:
                 </span>
                 <div className="flex gap-2">
                   {[2, 3, 4, 6, 8, 12].map((d) => (
@@ -221,8 +221,8 @@ export const DigitalBlackboard: React.FC = () => {
                       }}
                       className={`flex-1 py-1.5 rounded-lg text-xs font-mono font-bold cursor-pointer transition-all border ${
                         introDen === d
-                          ? 'bg-amber-400 text-slate-950 border-amber-300 font-black'
-                          : 'bg-slate-900 text-slate-300 border-slate-800 hover:bg-slate-800'
+                          ? 'bg-[#fde047] text-[#112017] border-[#fde047] font-black shadow-xs'
+                          : 'bg-[#162a1e] text-[#d2e2d7] border-[#2b5138] hover:bg-[#1f3a2a]'
                       }`}
                     >
                       {d}
@@ -234,21 +234,21 @@ export const DigitalBlackboard: React.FC = () => {
           </div>
 
           {/* EL PUENTE AL PRINCIPIO DEL 1 */}
-          <div className="bg-[#111827] border border-slate-800 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="bg-[#172e21] border border-[#2f593e] rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="space-y-1 text-center sm:text-left">
-              <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider block">
-                La Gran Pregunta:
+              <span className="text-xs font-mono font-bold text-[#fef08a] uppercase tracking-wider block">
+                La pregunta clave:
               </span>
-              <p className="text-sm text-slate-200">
-                ¿Qué pasa si tienes medio pastel y quieres cambiarlo a cuartos o sextos <strong>sin alterar cuánta comida hay</strong>?
+              <p className="text-sm text-[#c6dcce]">
+                ¿Qué pasa si tienes medio pastel y quieres cortarlo en más pedazos <strong>sin que cambie la cantidad de comida</strong>?
               </p>
             </div>
 
             <button
               onClick={() => setActiveSection('identity')}
-              className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-3 px-6 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer shadow-lg whitespace-nowrap"
+              className="bg-[#244530] hover:bg-[#2d563d] text-[#fef08a] border border-[#3d6e4f] font-bold py-3 px-6 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer shadow-sm whitespace-nowrap"
             >
-              <span>Ver el Arma Maestra: El 1</span>
+              <span>Ver el truco del 1</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -256,61 +256,61 @@ export const DigitalBlackboard: React.FC = () => {
       )}
 
       {/* ========================================================================= */}
-      {/* SECCIÓN 2: LA LEY INVIOLABLE DEL "1" (CONSERVACIÓN DE VALOR)              */}
+      {/* SECCIÓN 2: EL TRUCO DEL 1 (CONSERVAR LA MISMA COMIDA)                     */}
       {/* ========================================================================= */}
       {activeSection === 'identity' && (
-        <div className="bg-[#0b1120] border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl text-slate-100 space-y-8 animate-in fade-in duration-300">
+        <div className="bg-[#14281c] border border-[#274b34] rounded-3xl p-6 sm:p-10 shadow-md text-[#e8eee9] space-y-8 animate-in fade-in duration-300">
           
           <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-[11px] font-mono text-amber-400 font-bold uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-md border border-amber-400/20">
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono text-[#fef08a] font-bold uppercase tracking-widest bg-[#1c3827] px-3 py-1 rounded-md border border-[#2e593e]">
               <Lightbulb className="w-3.5 h-3.5" />
-              Fundamento 02: La Ley de Conservación
+              Paso 02: Cortar más fino sin cambiar la comida
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              No puedes cambiar el valor de un número. Pero puedes cambiar su ropa multiplicando por 1.
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#f5f7f2] tracking-tight leading-tight">
+              Si multiplicas por 1, nada cambia de valor. Pero puedes cambiar cómo se ve.
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Cualquier cosa multiplicada por 1 sigue siendo idéntica a sí misma (<span className="font-mono text-amber-300">x · 1 = x</span>). 
-              Y como <span className="font-mono text-amber-300">2/2 = 1</span>, <span className="font-mono text-amber-300">3/3 = 1</span> y <span className="font-mono text-amber-300">k/k = 1</span>, puedes disfrazar cualquier fracción como a ti te convenga.
+            <p className="text-sm sm:text-base text-[#bfd4c7] leading-relaxed">
+              Cualquier cosa multiplicada por 1 se queda exactamente igual (<span className="font-mono text-[#fef08a] font-semibold">x · 1 = x</span>). 
+              Y como <span className="font-mono text-[#fef08a] font-semibold">2/2 = 1</span>, <span className="font-mono text-[#fef08a] font-semibold">3/3 = 1</span> y <span className="font-mono text-[#fef08a] font-semibold">4/4 = 1</span>, puedes cortar las rebanadas en pedacitos más chicos sin ganar ni perder comida.
             </p>
           </div>
 
           {/* EL EXPERIMENTO EN VIVO */}
-          <div className="bg-[#111c38]/60 border border-slate-800/90 rounded-2xl p-6 sm:p-8 space-y-6">
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
-              <span className="text-xs font-mono text-slate-400 uppercase">
-                Selecciona la fracción original:
+          <div className="bg-[#0f1f16] border border-[#23432e] rounded-2xl p-6 sm:p-8 space-y-6 shadow-inner">
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#23432e] pb-4">
+              <span className="text-xs font-mono text-[#9eb6a7] uppercase font-medium">
+                Elige la porción inicial:
               </span>
               
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => { setFactorBaseNum(1); setFactorBaseDen(2); }}
-                  className={`px-3 py-1 rounded-lg text-xs font-mono font-bold cursor-pointer border ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold cursor-pointer border ${
                     factorBaseNum === 1 && factorBaseDen === 2
-                      ? 'bg-amber-400 text-slate-950 border-amber-300'
-                      : 'bg-slate-900 text-slate-300 border-slate-800'
+                      ? 'bg-[#fde047] text-[#112017] border-[#fde047]'
+                      : 'bg-[#162a1e] text-[#d2e2d7] border-[#2b5138] hover:bg-[#1f3a2a]'
                   }`}
                 >
                   1/2
                 </button>
                 <button
                   onClick={() => { setFactorBaseNum(2); setFactorBaseDen(3); }}
-                  className={`px-3 py-1 rounded-lg text-xs font-mono font-bold cursor-pointer border ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold cursor-pointer border ${
                     factorBaseNum === 2 && factorBaseDen === 3
-                      ? 'bg-amber-400 text-slate-950 border-amber-300'
-                      : 'bg-slate-900 text-slate-300 border-slate-800'
+                      ? 'bg-[#fde047] text-[#112017] border-[#fde047]'
+                      : 'bg-[#162a1e] text-[#d2e2d7] border-[#2b5138] hover:bg-[#1f3a2a]'
                   }`}
                 >
                   2/3
                 </button>
                 <button
                   onClick={() => { setFactorBaseNum(3); setFactorBaseDen(4); }}
-                  className={`px-3 py-1 rounded-lg text-xs font-mono font-bold cursor-pointer border ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold cursor-pointer border ${
                     factorBaseNum === 3 && factorBaseDen === 4
-                      ? 'bg-amber-400 text-slate-950 border-amber-300'
-                      : 'bg-slate-900 text-slate-300 border-slate-800'
+                      ? 'bg-[#fde047] text-[#112017] border-[#fde047]'
+                      : 'bg-[#162a1e] text-[#d2e2d7] border-[#2b5138] hover:bg-[#1f3a2a]'
                   }`}
                 >
                   3/4
@@ -320,8 +320,8 @@ export const DigitalBlackboard: React.FC = () => {
 
             {/* SELECTOR DE FACTOR DEL 1 */}
             <div className="space-y-2">
-              <span className="text-xs text-amber-300 font-mono font-bold uppercase block">
-                Inyecta el factor neutro (k/k):
+              <span className="text-xs text-[#fef08a] font-mono font-bold uppercase block">
+                Multiplica arriba y abajo por el mismo número:
               </span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[1, 2, 3, 4].map((k) => (
@@ -330,13 +330,13 @@ export const DigitalBlackboard: React.FC = () => {
                     onClick={() => setChosenFactorK(k)}
                     className={`p-3 rounded-xl font-mono text-xs cursor-pointer transition-all border flex flex-col items-center gap-1 ${
                       chosenFactorK === k
-                        ? 'bg-amber-400 text-slate-950 border-amber-300 font-black shadow-md'
-                        : 'bg-slate-900 text-slate-300 border-slate-800 hover:bg-slate-800'
+                        ? 'bg-[#254631] text-[#fef08a] border-[#3b6b4c] font-black shadow-xs'
+                        : 'bg-[#162a1e] text-[#d2e2d7] border-[#2b5138] hover:bg-[#1f3a2a]'
                     }`}
                   >
                     <span className="text-base font-bold">· ({k}/{k})</span>
-                    <span className="text-[10px] opacity-80">
-                      {k === 1 ? 'Valor sin alterar' : `Subdivide en ${k} partes`}
+                    <span className="text-[10px] text-[#9eb6a7]">
+                      {k === 1 ? 'Sin cortar más' : `Corta cada rebanada en ${k}`}
                     </span>
                   </button>
                 ))}
@@ -344,34 +344,36 @@ export const DigitalBlackboard: React.FC = () => {
             </div>
 
             {/* Demostración Visual y Numérica */}
-            <div className="bg-[#090e1a] p-6 rounded-2xl border border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="bg-[#14281c] p-6 rounded-2xl border border-[#274b34] grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="flex flex-col items-center text-center space-y-2">
-                <PrecisionPie
-                  totalSlices={factorBaseDen * chosenFactorK}
-                  filledSlices={factorBaseNum * chosenFactorK}
-                  size={180}
-                  theme="chalkboard"
-                />
-                <span className="text-xs font-mono text-slate-300">
-                  Área cubierta: exactamente la misma
+                <div className="p-3 bg-[#162a1e] rounded-2xl border border-[#2b5138]">
+                  <PrecisionPie
+                    totalSlices={factorBaseDen * chosenFactorK}
+                    filledSlices={factorBaseNum * chosenFactorK}
+                    size={180}
+                    theme="paper"
+                  />
+                </div>
+                <span className="text-xs font-mono text-[#d2e2d7] font-medium">
+                  El área iluminada es exactamente la misma
                 </span>
               </div>
 
               <div className="space-y-4">
-                <div className="p-4 bg-slate-900/90 rounded-xl border border-slate-800">
-                  <span className="text-[10px] font-mono text-slate-400 uppercase block mb-2">
-                    Ecuación en pizarra:
+                <div className="p-4 bg-[#162a1e] rounded-xl border border-[#2b5138]">
+                  <span className="text-[10px] font-mono text-[#9eb6a7] uppercase block mb-2 font-medium">
+                    Lo que escribes en la pizarra:
                   </span>
                   
-                  <div className="flex flex-wrap items-center gap-3 text-2xl font-serif text-white">
+                  <div className="flex flex-wrap items-center gap-3 text-2xl font-serif text-[#f5f7f2]">
                     <MathFraction
                       numerator={factorBaseNum}
                       denominator={factorBaseDen}
                       size="lg"
                       variant="chalk"
                     />
-                    <span className="text-slate-500">·</span>
-                    <div className="border border-amber-400/40 bg-amber-400/10 px-2 py-0.5 rounded-lg text-amber-300">
+                    <span className="text-[#8ea797]">·</span>
+                    <div className="border border-[#3d6e4f] bg-[#1a3325] px-2.5 py-0.5 rounded-lg text-[#fef08a]">
                       <MathFraction
                         numerator={chosenFactorK}
                         denominator={chosenFactorK}
@@ -379,7 +381,7 @@ export const DigitalBlackboard: React.FC = () => {
                         variant="accent"
                       />
                     </div>
-                    <span className="text-slate-500">=</span>
+                    <span className="text-[#8ea797]">=</span>
                     <MathFraction
                       numerator={factorBaseNum * chosenFactorK}
                       denominator={factorBaseDen * chosenFactorK}
@@ -389,28 +391,28 @@ export const DigitalBlackboard: React.FC = () => {
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  <strong>El secreto que te acompañará para siempre:</strong> Al multiplicar arriba y abajo por <span className="font-mono text-amber-300 font-bold">{chosenFactorK}</span>, el área no creció ni se achicó. Solo cambiaste la resolución del corte. Con esta sola herramienta puedes resolver cualquier suma o resta del planeta.
+                <p className="text-xs text-[#c6dcce] leading-relaxed">
+                  <strong>La clave para entender todo:</strong> Al multiplicar arriba y abajo por <span className="font-mono text-[#fde047] font-bold">{chosenFactorK}</span>, no creaste más comida. Solo cortaste cada pedazo en rebanadas más delgaditas. Con este truco tan simple resolverás cualquier suma o resta sin enredarte.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#111827] border border-slate-800 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="bg-[#172e21] border border-[#2f593e] rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="space-y-1 text-center sm:text-left">
-              <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider block">
-                Paso Final:
+              <span className="text-xs font-mono font-bold text-[#fef08a] uppercase tracking-wider block">
+                ¡Hora de jugar y practicar!:
               </span>
-              <p className="text-sm text-slate-200">
-                Llevemos esta herramienta al taller para operar <strong className="font-mono">+, -, ×, ÷</strong> con control absoluto.
+              <p className="text-sm text-[#c6dcce]">
+                Vamos a usar este truco para sumar, restar, multiplicar y dividir sin fórmulas raras.
               </p>
             </div>
 
             <button
               onClick={() => setActiveSection('workshop')}
-              className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-3 px-6 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer shadow-lg whitespace-nowrap"
+              className="bg-[#244530] hover:bg-[#2d563d] text-[#fef08a] border border-[#3d6e4f] font-bold py-3 px-6 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer shadow-sm whitespace-nowrap"
             >
-              <span>Entrar al Taller Mecánico</span>
+              <span>Ir a la práctica</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -418,25 +420,25 @@ export const DigitalBlackboard: React.FC = () => {
       )}
 
       {/* ========================================================================= */}
-      {/* SECCIÓN 3: EL TALLER MECÁNICO ACTIVO (LAS 4 OPERACIONES EN UNA MESA)     */}
+      {/* SECCIÓN 3: PRÁCTICA INTERACTIVA (LAS 4 OPERACIONES EN LA PIZARRA)         */}
       {/* ========================================================================= */}
       {activeSection === 'workshop' && (
-        <div className="bg-[#0b1120] border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl text-slate-100 space-y-8 animate-in fade-in duration-300">
+        <div className="bg-[#14281c] border border-[#274b34] rounded-3xl p-6 sm:p-10 shadow-md text-[#e8eee9] space-y-8 animate-in fade-in duration-300">
           
           {/* HEADER DEL TALLER */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#274b34] pb-6">
             <div>
-              <div className="inline-flex items-center gap-2 text-[11px] font-mono text-amber-400 font-bold uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-md border border-amber-400/20 mb-2">
+              <div className="inline-flex items-center gap-2 text-[11px] font-mono text-[#fef08a] font-bold uppercase tracking-widest bg-[#1c3827] px-3 py-1 rounded-md border border-[#2e593e] mb-2">
                 <Cpu className="w-3.5 h-3.5" />
-                Banco de Operación Mecánica
+                Paso 03: Pon a prueba cualquier cuenta
               </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                Mesa de Trabajo Numérica
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#f5f7f2] tracking-tight">
+                Mesa de Operaciones
               </h2>
             </div>
 
             {/* SELECTOR DE OPERACIÓN */}
-            <div className="flex items-center bg-slate-900 p-1.5 rounded-2xl border border-slate-800 gap-1">
+            <div className="flex items-center bg-[#0f1f16] p-1.5 rounded-2xl border border-[#23432e] gap-1">
               {(['+', '-', '×', '÷'] as const).map((operation) => (
                 <button
                   key={operation}
@@ -446,8 +448,8 @@ export const DigitalBlackboard: React.FC = () => {
                   }}
                   className={`w-11 h-10 rounded-xl font-mono text-lg font-bold transition-all cursor-pointer flex items-center justify-center ${
                     op === operation
-                      ? 'bg-amber-400 text-slate-950 font-black shadow-md'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                      ? 'bg-[#fde047] text-[#112017] font-black shadow-xs'
+                      : 'text-[#9eb6a7] hover:text-[#f5f7f2] hover:bg-[#1a3325]'
                   }`}
                 >
                   {operation}
@@ -460,49 +462,49 @@ export const DigitalBlackboard: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
             {/* TÉRMINO A */}
-            <div className="bg-[#111c38]/60 border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-5">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+            <div className="bg-[#0f1f16] border border-[#23432e] rounded-2xl p-5 sm:p-6 space-y-5 shadow-inner">
+              <div className="flex items-center justify-between border-b border-[#23432e] pb-4">
                 <div className="space-y-0.5">
-                  <span className="text-xs font-mono text-slate-400 uppercase">Término A</span>
-                  <span className="text-[11px] text-slate-500 block">Fracción de entrada</span>
+                  <span className="text-xs font-mono text-[#9eb6a7] uppercase font-medium">Primera fracción</span>
+                  <span className="text-[11px] text-[#7a9985] block">Lo que tienes al inicio</span>
                 </div>
                 <MathFraction numerator={numA} denominator={denA} size="lg" variant="chalk" />
               </div>
 
               {/* Ajustadores numéricos */}
               <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-                <div className="bg-slate-900/90 p-3 rounded-xl border border-slate-800 space-y-1">
-                  <span className="text-slate-400">Numerador:</span>
+                <div className="bg-[#162a1e] p-3 rounded-xl border border-[#2b5138] space-y-1">
+                  <span className="text-[#9eb6a7]">Rebanadas que tienes:</span>
                   <div className="flex items-center justify-between pt-1">
                     <button
                       onClick={() => setNumA(Math.max(1, numA - 1))}
-                      className="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-bold cursor-pointer"
+                      className="w-7 h-7 bg-[#1f3a2a] hover:bg-[#284c37] text-[#f5f7f2] rounded font-bold cursor-pointer border border-[#30583f]"
                     >
                       -
                     </button>
-                    <span className="text-base font-bold text-white">{numA}</span>
+                    <span className="text-base font-bold text-[#fde047]">{numA}</span>
                     <button
                       onClick={() => setNumA(numA + 1)}
-                      className="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-bold cursor-pointer"
+                      className="w-7 h-7 bg-[#1f3a2a] hover:bg-[#284c37] text-[#f5f7f2] rounded font-bold cursor-pointer border border-[#30583f]"
                     >
                       +
                     </button>
                   </div>
                 </div>
 
-                <div className="bg-slate-900/90 p-3 rounded-xl border border-slate-800 space-y-1">
-                  <span className="text-slate-400">Denominador:</span>
+                <div className="bg-[#162a1e] p-3 rounded-xl border border-[#2b5138] space-y-1">
+                  <span className="text-[#9eb6a7]">Corte del pastel:</span>
                   <div className="flex items-center justify-between pt-1">
                     <button
                       onClick={() => setDenA(Math.max(2, denA - 1))}
-                      className="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-bold cursor-pointer"
+                      className="w-7 h-7 bg-[#1f3a2a] hover:bg-[#284c37] text-[#f5f7f2] rounded font-bold cursor-pointer border border-[#30583f]"
                     >
                       -
                     </button>
-                    <span className="text-base font-bold text-white">{denA}</span>
+                    <span className="text-base font-bold text-[#f5f7f2]">{denA}</span>
                     <button
                       onClick={() => setDenA(denA + 1)}
-                      className="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-bold cursor-pointer"
+                      className="w-7 h-7 bg-[#1f3a2a] hover:bg-[#284c37] text-[#f5f7f2] rounded font-bold cursor-pointer border border-[#30583f]"
                     >
                       +
                     </button>
@@ -512,10 +514,10 @@ export const DigitalBlackboard: React.FC = () => {
 
               {/* INYECTOR DEL FACTOR 1 PARA SUMA Y RESTA */}
               {(op === '+' || op === '-') && (
-                <div className="space-y-2 pt-2 border-t border-slate-800">
+                <div className="space-y-2 pt-2 border-t border-[#23432e]">
                   <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="text-slate-300">Factor neutro (k/k):</span>
-                    <span className="text-amber-300 font-bold">· ({factorA}/{factorA})</span>
+                    <span className="text-[#d2e2d7]">Multiplica por el 1 neutro:</span>
+                    <span className="text-[#fef08a] font-bold">· ({factorA}/{factorA})</span>
                   </div>
                   
                   <div className="flex gap-1.5">
@@ -525,8 +527,8 @@ export const DigitalBlackboard: React.FC = () => {
                         onClick={() => setFactorA(k)}
                         className={`flex-1 py-1.5 rounded-lg text-xs font-mono cursor-pointer border ${
                           factorA === k
-                            ? 'bg-amber-400 text-slate-950 font-bold border-amber-300'
-                            : 'bg-slate-900 text-slate-300 border-slate-800 hover:bg-slate-800'
+                            ? 'bg-[#fde047] text-[#112017] font-bold border-[#fde047] shadow-xs'
+                            : 'bg-[#162a1e] text-[#d2e2d7] border-[#2b5138] hover:bg-[#1f3a2a]'
                         }`}
                       >
                         {k}/{k}
@@ -534,9 +536,9 @@ export const DigitalBlackboard: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-400 pt-1">
-                    <span>Estructura modificada:</span>
-                    <span className="text-white font-bold text-sm">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#9eb6a7] pt-1">
+                    <span>Rebanadas transformadas:</span>
+                    <span className="text-[#fef08a] font-bold text-sm">
                       {scaledNumA} / {scaledDenA}
                     </span>
                   </div>
@@ -545,49 +547,49 @@ export const DigitalBlackboard: React.FC = () => {
             </div>
 
             {/* TÉRMINO B */}
-            <div className="bg-[#111c38]/60 border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-5">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+            <div className="bg-[#0f1f16] border border-[#23432e] rounded-2xl p-5 sm:p-6 space-y-5 shadow-inner">
+              <div className="flex items-center justify-between border-b border-[#23432e] pb-4">
                 <div className="space-y-0.5">
-                  <span className="text-xs font-mono text-slate-400 uppercase">Término B</span>
-                  <span className="text-[11px] text-slate-500 block">Fracción de entrada</span>
+                  <span className="text-xs font-mono text-[#9eb6a7] uppercase font-medium">Segunda fracción</span>
+                  <span className="text-[11px] text-[#7a9985] block">Lo que vas a operar</span>
                 </div>
                 <MathFraction numerator={numB} denominator={denB} size="lg" variant="chalk" />
               </div>
 
               {/* Ajustadores numéricos */}
               <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-                <div className="bg-slate-900/90 p-3 rounded-xl border border-slate-800 space-y-1">
-                  <span className="text-slate-400">Numerador:</span>
+                <div className="bg-[#162a1e] p-3 rounded-xl border border-[#2b5138] space-y-1">
+                  <span className="text-[#9eb6a7]">Rebanadas que tienes:</span>
                   <div className="flex items-center justify-between pt-1">
                     <button
                       onClick={() => setNumB(Math.max(1, numB - 1))}
-                      className="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-bold cursor-pointer"
+                      className="w-7 h-7 bg-[#1f3a2a] hover:bg-[#284c37] text-[#f5f7f2] rounded font-bold cursor-pointer border border-[#30583f]"
                     >
                       -
                     </button>
-                    <span className="text-base font-bold text-white">{numB}</span>
+                    <span className="text-base font-bold text-[#fde047]">{numB}</span>
                     <button
                       onClick={() => setNumB(numB + 1)}
-                      className="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-bold cursor-pointer"
+                      className="w-7 h-7 bg-[#1f3a2a] hover:bg-[#284c37] text-[#f5f7f2] rounded font-bold cursor-pointer border border-[#30583f]"
                     >
                       +
                     </button>
                   </div>
                 </div>
 
-                <div className="bg-slate-900/90 p-3 rounded-xl border border-slate-800 space-y-1">
-                  <span className="text-slate-400">Denominador:</span>
+                <div className="bg-[#162a1e] p-3 rounded-xl border border-[#2b5138] space-y-1">
+                  <span className="text-[#9eb6a7]">Corte del pastel:</span>
                   <div className="flex items-center justify-between pt-1">
                     <button
                       onClick={() => setDenB(Math.max(2, denB - 1))}
-                      className="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-bold cursor-pointer"
+                      className="w-7 h-7 bg-[#1f3a2a] hover:bg-[#284c37] text-[#f5f7f2] rounded font-bold cursor-pointer border border-[#30583f]"
                     >
                       -
                     </button>
-                    <span className="text-base font-bold text-white">{denB}</span>
+                    <span className="text-base font-bold text-[#f5f7f2]">{denB}</span>
                     <button
                       onClick={() => setDenB(denB + 1)}
-                      className="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-bold cursor-pointer"
+                      className="w-7 h-7 bg-[#1f3a2a] hover:bg-[#284c37] text-[#f5f7f2] rounded font-bold cursor-pointer border border-[#30583f]"
                     >
                       +
                     </button>
@@ -597,10 +599,10 @@ export const DigitalBlackboard: React.FC = () => {
 
               {/* INYECTOR DEL FACTOR 1 PARA SUMA Y RESTA */}
               {(op === '+' || op === '-') && (
-                <div className="space-y-2 pt-2 border-t border-slate-800">
+                <div className="space-y-2 pt-2 border-t border-[#23432e]">
                   <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="text-slate-300">Factor neutro (k/k):</span>
-                    <span className="text-amber-300 font-bold">· ({factorB}/{factorB})</span>
+                    <span className="text-[#d2e2d7]">Multiplica por el 1 neutro:</span>
+                    <span className="text-[#fef08a] font-bold">· ({factorB}/{factorB})</span>
                   </div>
                   
                   <div className="flex gap-1.5">
@@ -610,8 +612,8 @@ export const DigitalBlackboard: React.FC = () => {
                         onClick={() => setFactorB(k)}
                         className={`flex-1 py-1.5 rounded-lg text-xs font-mono cursor-pointer border ${
                           factorB === k
-                            ? 'bg-amber-400 text-slate-950 font-bold border-amber-300'
-                            : 'bg-slate-900 text-slate-300 border-slate-800 hover:bg-slate-800'
+                            ? 'bg-[#fde047] text-[#112017] font-bold border-[#fde047] shadow-xs'
+                            : 'bg-[#162a1e] text-[#d2e2d7] border-[#2b5138] hover:bg-[#1f3a2a]'
                         }`}
                       >
                         {k}/{k}
@@ -619,9 +621,9 @@ export const DigitalBlackboard: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-400 pt-1">
-                    <span>Estructura modificada:</span>
-                    <span className="text-white font-bold text-sm">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#9eb6a7] pt-1">
+                    <span>Rebanadas transformadas:</span>
+                    <span className="text-[#fef08a] font-bold text-sm">
                       {scaledNumB} / {scaledDenB}
                     </span>
                   </div>
@@ -632,22 +634,21 @@ export const DigitalBlackboard: React.FC = () => {
 
           {/* BOTÓN DE AUTO-EMPAREJAMIENTO DE BASES SI SON DISTINTAS */}
           {(op === '+' || op === '-') && !sameBase && (
-            <div className="bg-slate-900 border border-amber-500/30 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg">
+            <div className="bg-[#1c3827] border border-[#2e593e] p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
               <div className="space-y-0.5 text-center sm:text-left">
-                <span className="text-xs text-amber-300 font-mono font-bold block">
-                  ¡No puedes sumar ni restar rebanadas de distinto tamaño!
+                <span className="text-xs text-[#fef08a] font-mono font-bold block">
+                  ¡Tus rebanadas tienen diferente tamaño ({scaledDenA} y {scaledDenB})!
                 </span>
-                <p className="text-xs text-slate-300 font-mono">
-                  Bases actuales: <span className="text-white font-bold">{scaledDenA}</span> y <span className="text-white font-bold">{scaledDenB}</span>.
-                  Objetivo común: <strong className="text-amber-400 font-bold">{commonTarget}</strong> (Multiplicar por 1 a cada una).
+                <p className="text-xs text-[#c6dcce] font-mono">
+                  Para sumar o restar sin enredos, córtalas al mismo tamaño común: <strong className="text-[#fde047] font-bold">{commonTarget}</strong> pedacitos.
                 </p>
               </div>
               <button
                 onClick={autoAlignBases}
-                className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer font-mono whitespace-nowrap shadow-md flex items-center gap-2"
+                className="bg-[#fde047] hover:bg-[#fef08a] text-[#112017] font-black text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer font-mono whitespace-nowrap shadow-xs flex items-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
-                <span>Aplicar el 1 y Emparejar Bases</span>
+                <span>Cortar al mismo tamaño</span>
               </button>
             </div>
           )}
@@ -655,45 +656,45 @@ export const DigitalBlackboard: React.FC = () => {
           {/* ========================================================================= */}
           {/* PESTAÑA DESPLEGABLE ELEGANTE: ¿POR QUÉ FUNCIONA ESTO? (DEMOSTRACIÓN PURA) */}
           {/* ========================================================================= */}
-          <div className="border border-slate-800 bg-[#080d19] rounded-2xl overflow-hidden transition-all shadow-md">
+          <div className="border border-[#274b34] bg-[#0f1f16] rounded-2xl overflow-hidden transition-all shadow-inner">
             <button
               onClick={() => setShowDemonstration(!showDemonstration)}
-              className="w-full p-4 sm:p-5 flex items-center justify-between gap-3 text-left hover:bg-slate-900/60 transition-colors cursor-pointer"
+              className="w-full p-4 sm:p-5 flex items-center justify-between gap-3 text-left hover:bg-[#162a1e] transition-colors cursor-pointer"
             >
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400">
+                <div className="w-8 h-8 rounded-lg bg-[#1c3827] border border-[#2e593e] flex items-center justify-center text-[#fde047]">
                   <BookOpen className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-amber-300 font-bold block">
-                    Fundamento Teórico y Demostración
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#fef08a] font-bold block">
+                    ¿Por qué funciona este truco?
                   </span>
-                  <span className="text-sm text-slate-300 font-medium">
-                    {op === '+' && "¿Cómo se subdividen y unen los pasteles geométricos?"}
-                    {op === '-' && "¿Cómo se restan rebanadas del mismo calibre en el pastel?"}
-                    {op === '×' && "¿Qué significa multiplicar dos fracciones? (Una fracción de otra)"}
-                    {op === '÷' && "¿Por qué diablos se da vuelta la segunda fracción al dividir?"}
+                  <span className="text-sm text-[#c6dcce] font-medium">
+                    {op === '+' && "¿Cómo se ven y se juntan los pasteles cortados iguales?"}
+                    {op === '-' && "¿Cómo se quitan rebanadas del mismo tamaño sin equivocarse?"}
+                    {op === '×' && "¿Qué significa multiplicar dos fracciones? (Tomar una parte de otra)"}
+                    {op === '÷' && "¿Por qué se da vuelta la segunda fracción al dividir?"}
                   </span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800">
-                <span>{showDemonstration ? 'Ocultar explicación' : 'Ver el porqué'}</span>
+              <div className="flex items-center gap-2 text-xs font-mono text-[#d2e2d7] bg-[#162a1e] px-3 py-1.5 rounded-xl border border-[#2b5138]">
+                <span>{showDemonstration ? 'Cerrar explicación' : 'Ver el dibujo'}</span>
                 {showDemonstration ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
               </div>
             </button>
 
             {/* CONTENIDO DESPLEGABLE */}
             {showDemonstration && (
-              <div className="p-5 sm:p-7 border-t border-slate-800/80 bg-[#050914] space-y-6 animate-in fade-in duration-200">
+              <div className="p-5 sm:p-7 border-t border-[#23432e] bg-[#122419] space-y-6 animate-in fade-in duration-200">
                 
                 {/* EXPLICACIÓN PARA SUMA (+) */}
                 {op === '+' && (
                   <div className="space-y-5">
                     <div className="flex flex-col sm:flex-row items-center justify-around gap-6 py-2">
                       {/* Pastel A */}
-                      <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 flex flex-col items-center gap-2 text-center">
-                        <span className="text-xs font-mono text-slate-400">Término A</span>
+                      <div className="bg-[#162a1e] p-4 rounded-xl border border-[#2b5138] flex flex-col items-center gap-2 text-center">
+                        <span className="text-xs font-mono text-[#9eb6a7] font-medium">Pastel 1</span>
                         <GeometricPie
                           baseSlices={denA}
                           subdivisionK={factorA}
@@ -702,16 +703,16 @@ export const DigitalBlackboard: React.FC = () => {
                           theme="amber"
                           label={`${numA}/${denA} · (${factorA}/${factorA}) = ${scaledNumA}/${scaledDenA}`}
                         />
-                        <span className="text-[11px] font-mono text-slate-400">
-                          {factorA > 1 ? `Cada tercio cortado en ${factorA}` : 'Sin cortes extra'}
+                        <span className="text-[11px] font-mono text-[#7a9985]">
+                          {factorA > 1 ? `Cada rebanada cortada en ${factorA}` : 'Corte original'}
                         </span>
                       </div>
 
-                      <span className="text-2xl font-mono text-slate-500 font-bold">+</span>
+                      <span className="text-2xl font-mono text-[#fde047] font-bold">+</span>
 
                       {/* Pastel B */}
-                      <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 flex flex-col items-center gap-2 text-center">
-                        <span className="text-xs font-mono text-slate-400">Término B</span>
+                      <div className="bg-[#162a1e] p-4 rounded-xl border border-[#2b5138] flex flex-col items-center gap-2 text-center">
+                        <span className="text-xs font-mono text-[#9eb6a7] font-medium">Pastel 2</span>
                         <GeometricPie
                           baseSlices={denB}
                           subdivisionK={factorB}
@@ -720,16 +721,16 @@ export const DigitalBlackboard: React.FC = () => {
                           theme="emerald"
                           label={`${numB}/${denB} · (${factorB}/${factorB}) = ${scaledNumB}/${scaledDenB}`}
                         />
-                        <span className="text-[11px] font-mono text-slate-400">
-                          {factorB > 1 ? `Cada cuarto cortado en ${factorB}` : 'Sin cortes extra'}
+                        <span className="text-[11px] font-mono text-[#7a9985]">
+                          {factorB > 1 ? `Cada rebanada cortada en ${factorB}` : 'Corte original'}
                         </span>
                       </div>
 
-                      <span className="text-2xl font-mono text-slate-500 font-bold">=</span>
+                      <span className="text-2xl font-mono text-[#8ea797] font-bold">=</span>
 
                       {/* Pastel Resultado */}
-                      <div className="bg-amber-400/5 p-4 rounded-xl border border-amber-400/30 flex flex-col items-center gap-2 text-center">
-                        <span className="text-xs font-mono text-amber-300 font-bold">Pastel Unificado</span>
+                      <div className="bg-[#1c3827] p-4 rounded-xl border border-[#2e593e] flex flex-col items-center gap-2 text-center">
+                        <span className="text-xs font-mono text-[#fef08a] font-bold">Pastel Resultante</span>
                         {sameBase ? (
                           <GeometricPie
                             baseSlices={scaledDenA}
@@ -740,18 +741,18 @@ export const DigitalBlackboard: React.FC = () => {
                             label={`Total: ${scaledNumA + scaledNumB}/${scaledDenA}`}
                           />
                         ) : (
-                          <div className="w-[130px] h-[130px] rounded-full border border-dashed border-slate-700 flex items-center justify-center text-center p-2 text-xs font-mono text-slate-500">
-                            Rebanadas incompatibles hasta igualar bases
+                          <div className="w-[130px] h-[130px] rounded-full border border-dashed border-[#3d684e] flex items-center justify-center text-center p-2 text-xs font-mono text-[#9eb6a7]">
+                            Tienen tamaños distintos: corta al mismo tamaño primero
                           </div>
                         )}
-                        <span className="text-[11px] font-mono text-slate-400">
-                          {sameBase ? `Suma de ${scaledNumA} + ${scaledNumB} rebanadas` : 'Alinea los calibres'}
+                        <span className="text-[11px] font-mono text-[#c6dcce]">
+                          {sameBase ? `Suma: ${scaledNumA} + ${scaledNumB} rebanadas` : 'Corta al mismo tamaño'}
                         </span>
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 font-mono leading-relaxed bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-                      💡 <strong>El principio físico:</strong> Multiplicar por <strong className="text-amber-300">({factorA}/{factorA})</strong> no crea más masa de pastel. Simplemente pasa el cuchillo para subdividir cada porción en porciones más delgadas. Una vez que ambos pasteles tienen porciones del mismo tamaño (mismo calibre angular), ya puedes sumarlas contando los trozos uno a uno.
+                    <p className="text-xs text-[#c6dcce] font-mono leading-relaxed bg-[#162a1e] p-4 rounded-xl border border-[#2b5138]">
+                      💡 <strong>Fácil de recordar:</strong> Multiplicar por <strong className="text-[#fde047]">({factorA}/{factorA})</strong> no crea más pastel. Solo corta las rebanadas para que tengan el mismo tamaño que las del otro pastel. Una vez que todas miden lo mismo, las cuentas con los dedos una por una.
                     </p>
                   </div>
                 )}
@@ -760,8 +761,8 @@ export const DigitalBlackboard: React.FC = () => {
                 {op === '-' && (
                   <div className="space-y-5">
                     <div className="flex flex-col sm:flex-row items-center justify-around gap-6 py-2">
-                      <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 flex flex-col items-center gap-2 text-center">
-                        <span className="text-xs font-mono text-slate-400">Tienes</span>
+                      <div className="bg-[#162a1e] p-4 rounded-xl border border-[#2b5138] flex flex-col items-center gap-2 text-center">
+                        <span className="text-xs font-mono text-[#9eb6a7] font-medium">Tienes</span>
                         <GeometricPie
                           baseSlices={denA}
                           subdivisionK={factorA}
@@ -772,10 +773,10 @@ export const DigitalBlackboard: React.FC = () => {
                         />
                       </div>
 
-                      <span className="text-2xl font-mono text-slate-500 font-bold">-</span>
+                      <span className="text-2xl font-mono text-[#fde047] font-bold">-</span>
 
-                      <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 flex flex-col items-center gap-2 text-center">
-                        <span className="text-xs font-mono text-slate-400">Retiras</span>
+                      <div className="bg-[#162a1e] p-4 rounded-xl border border-[#2b5138] flex flex-col items-center gap-2 text-center">
+                        <span className="text-xs font-mono text-[#9eb6a7] font-medium">Te comes</span>
                         <GeometricPie
                           baseSlices={denB}
                           subdivisionK={factorB}
@@ -786,10 +787,10 @@ export const DigitalBlackboard: React.FC = () => {
                         />
                       </div>
 
-                      <span className="text-2xl font-mono text-slate-500 font-bold">=</span>
+                      <span className="text-2xl font-mono text-[#8ea797] font-bold">=</span>
 
-                      <div className="bg-rose-400/5 p-4 rounded-xl border border-rose-400/30 flex flex-col items-center gap-2 text-center">
-                        <span className="text-xs font-mono text-rose-300 font-bold">Sobran</span>
+                      <div className="bg-[#1c3827] p-4 rounded-xl border border-[#2e593e] flex flex-col items-center gap-2 text-center">
+                        <span className="text-xs font-mono text-[#fef08a] font-bold">Te quedan</span>
                         {sameBase ? (
                           <GeometricPie
                             baseSlices={scaledDenA}
@@ -800,15 +801,15 @@ export const DigitalBlackboard: React.FC = () => {
                             label={`Quedan: ${scaledNumA - scaledNumB}/${scaledDenA}`}
                           />
                         ) : (
-                          <div className="w-[130px] h-[130px] rounded-full border border-dashed border-slate-700 flex items-center justify-center text-center p-2 text-xs font-mono text-slate-500">
-                            Empareja calibres para restar
+                          <div className="w-[130px] h-[130px] rounded-full border border-dashed border-[#3d684e] flex items-center justify-center text-center p-2 text-xs font-mono text-[#9eb6a7]">
+                            Corta al mismo tamaño para restar
                           </div>
                         )}
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 font-mono leading-relaxed bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-                      💡 No se pueden restar 1 rebanada de tercio con 1 rebanada de cuarto porque no tienen el mismo tamaño. Al cortarlas a doceavos con el factor 1, restas directamente 4 trozos menos 3 trozos = 1 trozo de doceavo.
+                    <p className="text-xs text-[#c6dcce] font-mono leading-relaxed bg-[#162a1e] p-4 rounded-xl border border-[#2b5138]">
+                      💡 No se pueden restar pedazos de distinto tamaño porque no sabrías qué te queda. Al cortarlos al mismo tamaño con el truco del 1, simplemente restas {scaledNumA} pedazos menos {scaledNumB} pedazos.
                     </p>
                   </div>
                 )}
@@ -816,54 +817,53 @@ export const DigitalBlackboard: React.FC = () => {
                 {/* EXPLICACIÓN PARA MULTIPLICACIÓN (×) */}
                 {op === '×' && (
                   <div className="space-y-4">
-                    <div className="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-3">
-                      <span className="text-xs font-mono text-amber-300 font-bold block uppercase">
-                        ¿Qué significa físicamente multiplicar fracciones?
+                    <div className="bg-[#162a1e] p-5 rounded-xl border border-[#2b5138] space-y-3">
+                      <span className="text-xs font-mono text-[#fef08a] font-bold block uppercase">
+                        ¿Qué significa multiplicar fracciones?
                       </span>
-                      <p className="text-xs text-slate-300 font-mono leading-relaxed">
-                        En matemáticas, la palabra <strong>"de"</strong> significa multiplicar.
-                        Calcular <span className="text-amber-300 font-bold">{numA}/{denA} × {numB}/{denB}</span> significa: 
-                        tomar los <span className="text-white font-bold">{numA}/{denA}</span> <strong>DE</strong> una porción de <span className="text-white font-bold">{numB}/{denB}</span>.
+                      <p className="text-xs text-[#c6dcce] font-mono leading-relaxed">
+                        En la vida real, multiplicar fracciones es sacar una porción <strong>DE</strong> otra porción.
+                        Hacer <span className="text-[#fde047] font-bold">{numA}/{denA} × {numB}/{denB}</span> significa: 
+                        tomar <span className="text-[#f5f7f2] font-bold">{numA}/{denA}</span> <strong>DE</strong> la porción de <span className="text-[#f5f7f2] font-bold">{numB}/{denB}</span>.
                       </p>
 
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 text-center">
-                        <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                          <span className="text-[11px] text-slate-400 block mb-2">Porción inicial</span>
+                        <div className="bg-[#0f1f16] p-3 rounded-lg border border-[#23432e]">
+                          <span className="text-[11px] text-[#9eb6a7] block mb-2 font-medium">Porción inicial</span>
                           <GeometricPie baseSlices={denB} subdivisionK={1} filledBaseSlices={numB} size={110} theme="emerald" label={`${numB}/${denB}`} />
                         </div>
-                        <div className="flex items-center justify-center text-xs font-mono text-slate-400">
-                          Cortamos esa porción en <strong className="text-white mx-1">{denA}</strong> partes y tomamos <strong className="text-white mx-1">{numA}</strong>
+                        <div className="flex items-center justify-center text-xs font-mono text-[#d2e2d7]">
+                          Cortamos esa porción en <strong className="text-[#fde047] mx-1">{denA}</strong> partes y tomamos <strong className="text-[#fde047] mx-1">{numA}</strong>
                         </div>
-                        <div className="bg-slate-950 p-3 rounded-lg border border-amber-400/30">
-                          <span className="text-[11px] text-amber-300 block mb-2">Resultado final del entero</span>
+                        <div className="bg-[#0f1f16] p-3 rounded-lg border border-[#2e593e]">
+                          <span className="text-[11px] text-[#fef08a] font-medium block mb-2">Resultado final</span>
                           <GeometricPie baseSlices={denA * denB} subdivisionK={1} filledBaseSlices={numA * numB} size={110} theme="amber" label={`${numA * numB}/${denA * denB}`} />
                         </div>
                       </div>
 
-                      <p className="text-xs text-slate-400 font-mono pt-2">
-                        Por eso la regla es directa: numerador por numerador ({numA} × {numB} = {numA * numB}) y denominador por denominador ({denA} × {denB} = {denA * denB}). ¡No requiere igualar denominadores jamás!
+                      <p className="text-xs text-[#9eb6a7] font-mono pt-2">
+                        Por eso es directa: arriba con arriba ({numA} × {numB} = {numA * numB}) y abajo con abajo ({denA} × {denB} = {denA * denB}). ¡Aquí jamás necesitas cortar al mismo tamaño!
                       </p>
                     </div>
                   </div>
                 )}
 
-                {/* EXPLICACIÓN MAGISTRAL PARA DIVISIÓN (÷): CON PASTELES SUPERPUESTOS Y EL POR QUÉ SE VOLTEA */}
+                {/* EXPLICACIÓN PARA DIVISIÓN (÷) */}
                 {op === '÷' && (
                   <div className="space-y-6">
-                    {/* VISUALIZACIÓN FÍSICA CON ENCAJE REAL DE PASTELES */}
-                    <div className="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 space-y-4">
+                    <div className="bg-[#162a1e] p-5 rounded-2xl border border-[#2b5138] space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-mono text-amber-300 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                        <span className="text-xs font-mono text-[#fef08a] font-bold uppercase tracking-wider flex items-center gap-1.5">
                           <Sparkles className="w-3.5 h-3.5" />
-                          ¿Qué significa físicamente <MathFraction numerator={numA} denominator={denA} size="sm" variant="accent" /> ÷ <MathFraction numerator={numB} denominator={denB} size="sm" variant="chalk" />?
+                          ¿Qué significa <MathFraction numerator={numA} denominator={denA} size="sm" variant="accent" /> ÷ <MathFraction numerator={numB} denominator={denB} size="sm" variant="chalk" />?
                         </span>
-                        <span className="text-[11px] font-mono text-slate-400">
-                          Encaje geométrico de moldes
+                        <span className="text-[11px] font-mono text-[#9eb6a7]">
+                          Encajar un pedazo en otro
                         </span>
                       </div>
 
-                      <p className="text-xs text-slate-300 font-mono leading-relaxed">
-                        Dividir en la vida real es una sola pregunta: <strong>"¿Cuántas porciones de molde <MathFraction numerator={numB} denominator={denB} size="sm" variant="chalk" /> caben dentro de tu pastel <MathFraction numerator={numA} denominator={denA} size="sm" variant="accent" />?"</strong>
+                      <p className="text-xs text-[#c6dcce] font-mono leading-relaxed">
+                        Dividir es responder una sola cosa: <strong>"¿Cuántas rebanadas de molde <MathFraction numerator={numB} denominator={denB} size="sm" variant="chalk" /> caben adentro de tu pastel <MathFraction numerator={numA} denominator={denA} size="sm" variant="accent" />?"</strong>
                       </p>
 
                       <DivisionVisualizer
@@ -875,95 +875,84 @@ export const DigitalBlackboard: React.FC = () => {
                       />
                     </div>
 
-                    {/* DEMOSTRACIÓN ALGEBRAICA IMPECABLE EN PASOS NUMERADOS CON FRACCIONES VERTICALES DERECHAS */}
-                    <div className="bg-[#0b1329] p-5 sm:p-7 rounded-2xl border border-amber-400/30 space-y-5">
-                      <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
-                        <Sparkles className="w-4 h-4 text-amber-400" />
-                        <span className="text-xs font-mono text-amber-300 font-bold uppercase tracking-wider">
-                          Paso a Paso Impecable: ¿Por qué diablos se voltea la segunda fracción?
+                    {/* DEMOSTRACIÓN ALGEBRAICA */}
+                    <div className="bg-[#0f1f16] p-5 sm:p-7 rounded-2xl border border-[#23432e] space-y-5">
+                      <div className="flex items-center gap-2 border-b border-[#23432e] pb-3">
+                        <Sparkles className="w-4 h-4 text-[#fde047]" />
+                        <span className="text-xs font-mono text-[#fef08a] font-bold uppercase tracking-wider">
+                          Paso a paso: ¿Por qué se da vuelta la segunda fracción?
                         </span>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-4 gap-3 text-center">
-                        {/* PASO 1: FRACCIÓN DE DOS PISOS VERTICAL */}
-                        <div className="bg-slate-950/90 p-4 rounded-xl border border-slate-800 flex flex-col items-center justify-between gap-3 min-h-[210px]">
-                          <span className="text-[11px] font-mono text-amber-400 font-bold uppercase">Paso 1: Dos pisos</span>
+                        {/* PASO 1 */}
+                        <div className="bg-[#162a1e] p-4 rounded-xl border border-[#2b5138] flex flex-col items-center justify-between gap-3 min-h-[210px]">
+                          <span className="text-[11px] font-mono text-[#fef08a] font-bold uppercase">Paso 1: Dos pisos</span>
                           <div className="inline-flex flex-col items-center justify-center my-auto">
-                            {/* Fracción de arriba */}
                             <div className="px-3 py-1">
                               <MathFraction numerator={numA} denominator={denA} size="lg" variant="accent" />
                             </div>
-                            {/* Barra divisoria principal horizontal y ancha */}
-                            <span className="w-24 border-t-[2.5px] border-slate-200 my-1 shadow-xs" />
-                            {/* Fracción de abajo */}
+                            <span className="w-24 border-t-[2.5px] border-[#f5f7f2] my-1" />
                             <div className="px-3 py-1">
                               <MathFraction numerator={numB} denominator={denB} size="lg" variant="chalk" />
                             </div>
                           </div>
-                          <span className="text-[11px] text-slate-400 font-mono">
-                            Escribimos la división como una sola fracción gigante.
+                          <span className="text-[11px] text-[#9eb6a7] font-mono">
+                            Escribimos la división como una sola fracción alta.
                           </span>
                         </div>
 
-                        {/* PASO 2: INYECTAR EL 1 INVERSO VERTICAL */}
-                        <div className="bg-slate-950/90 p-4 rounded-xl border border-amber-400/40 flex flex-col items-center justify-between gap-3 min-h-[210px]">
-                          <span className="text-[11px] font-mono text-amber-300 font-bold uppercase">Paso 2: Inyectar el 1</span>
+                        {/* PASO 2 */}
+                        <div className="bg-[#1c3827] p-4 rounded-xl border border-[#2e593e] flex flex-col items-center justify-between gap-3 min-h-[210px]">
+                          <span className="text-[11px] font-mono text-[#fef08a] font-bold uppercase">Paso 2: Multiplicar por 1</span>
                           <div className="inline-flex flex-col items-center justify-center my-auto">
-                            <span className="text-[11px] font-mono text-amber-300 mb-1">Multiplicamos por 1:</span>
-                            {/* Fracción de 1 con numeradores invertidos arriba y abajo */}
+                            <span className="text-[11px] font-mono text-[#c6dcce] mb-1 font-medium">Usamos el 1 invertido:</span>
                             <div className="px-2 py-0.5">
                               <MathFraction numerator={denB} denominator={numB} size="md" variant="accent" />
                             </div>
-                            <span className="w-20 border-t-[2.5px] border-amber-400 my-1" />
+                            <span className="w-20 border-t-[2.5px] border-[#fde047] my-1" />
                             <div className="px-2 py-0.5">
                               <MathFraction numerator={denB} denominator={numB} size="md" variant="accent" />
                             </div>
                           </div>
-                          <span className="text-[11px] text-amber-300/90 font-mono">
-                            Cualquier número dividido por sí mismo sigue valiendo 1.
+                          <span className="text-[11px] text-[#c6dcce] font-mono">
+                            Cualquier número entre sí mismo es 1.
                           </span>
                         </div>
 
-                        {/* PASO 3: EL DENOMINADOR SE VUELVE 1 */}
-                        <div className="bg-slate-950/90 p-4 rounded-xl border border-slate-800 flex flex-col items-center justify-between gap-3 min-h-[210px]">
-                          <span className="text-[11px] font-mono text-emerald-400 font-bold uppercase">Paso 3: Sótano a 1</span>
+                        {/* PASO 3 */}
+                        <div className="bg-[#1a3526] p-4 rounded-xl border border-[#30583f] flex flex-col items-center justify-between gap-3 min-h-[210px]">
+                          <span className="text-[11px] font-mono text-[#86efac] font-bold uppercase">Paso 3: Abajo da 1</span>
                           <div className="inline-flex flex-col items-center justify-center my-auto">
-                            {/* Arriba: queda la multiplicación */}
                             <div className="flex items-center gap-2 pb-1">
                               <MathFraction numerator={numA} denominator={denA} size="md" variant="chalk" />
-                              <span className="text-amber-400 font-sans font-bold text-sm">×</span>
+                              <span className="text-[#fde047] font-sans font-bold text-sm">×</span>
                               <MathFraction numerator={denB} denominator={numB} size="md" variant="accent" />
                             </div>
-                            {/* Barra principal */}
-                            <span className="w-28 border-t-[2px] border-slate-500 my-1" />
-                            {/* Abajo: se anula a 1 */}
-                            <div className="flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded text-emerald-400 text-xs font-mono font-bold mt-1">
-                              <span>Sótano = 1</span>
+                            <span className="w-28 border-t-[2px] border-[#3b6b4c] my-1" />
+                            <div className="flex items-center gap-1 bg-[#254631] border border-[#3b6b4c] px-2 py-0.5 rounded text-[#86efac] text-xs font-mono font-bold mt-1">
+                              <span>Abajo queda 1</span>
                             </div>
                           </div>
-                          <span className="text-[11px] text-emerald-300 font-mono">
-                            ¡El denominador se neutraliza y se convierte en 1!
+                          <span className="text-[11px] text-[#86efac] font-mono">
+                            ¡La parte de abajo se cancela sola y queda 1!
                           </span>
                         </div>
 
-                        {/* PASO 4: LO QUE SOBREVIVE */}
-                        <div className="bg-slate-950/90 p-4 rounded-xl border border-slate-800 flex flex-col items-center justify-between gap-3 min-h-[210px]">
-                          <span className="text-[11px] font-mono text-amber-400 font-bold uppercase">Paso 4: Lo que queda</span>
-                          <div className="flex items-center justify-center my-auto gap-2 text-xl font-serif text-white">
+                        {/* PASO 4 */}
+                        <div className="bg-[#162a1e] p-4 rounded-xl border border-[#2b5138] flex flex-col items-center justify-between gap-3 min-h-[210px]">
+                          <span className="text-[11px] font-mono text-[#fef08a] font-bold uppercase">Paso 4: Lo que queda</span>
+                          <div className="flex items-center justify-center my-auto gap-2 text-xl font-serif text-[#f5f7f2]">
                             <MathFraction numerator={numA} denominator={denA} size="lg" variant="chalk" />
-                            <span className="text-amber-400 font-sans font-bold text-base">×</span>
-                            <div className="border border-amber-400/40 bg-amber-400/10 px-1.5 py-0.5 rounded-xl">
+                            <span className="text-[#fde047] font-sans font-bold text-base">×</span>
+                            <div className="border border-[#3d6e4f] bg-[#1a3325] px-1.5 py-0.5 rounded-xl">
                               <MathFraction numerator={denB} denominator={numB} size="lg" variant="accent" />
                             </div>
                           </div>
-                          <span className="text-[11px] text-slate-300 font-mono">
-                            Por eso la segunda fracción aparece invertida: ¡La Ley del 1 en acción!
+                          <span className="text-[11px] text-[#c6dcce] font-mono">
+                            Por eso la segunda se voltea: ¡es el truco del 1!
                           </span>
                         </div>
-                      </div>
-
-                      <div className="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 text-center text-xs font-mono text-slate-300">
-                        Nota: Usamos el signo universal <strong className="text-amber-300 font-sans">×</strong> para multiplicar. En niveles avanzados verás que a veces se representa con un punto (<span className="text-white font-serif">·</span>), pero la mecánica es exactamente la misma.
                       </div>
                     </div>
                   </div>
@@ -972,103 +961,101 @@ export const DigitalBlackboard: React.FC = () => {
             )}
           </div>
 
-          {/* PROCEDIMIENTO Y RESOLUCIÓN EN PIZARRA (CÁTEDRA DE MARÍA INÉS BARAGATTI) */}
-          <div className="bg-[#090e1a] border border-slate-800 p-6 sm:p-8 rounded-2xl space-y-6">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-              <span className="text-xs font-mono text-slate-300 uppercase tracking-wider font-bold">
-                Paso a Paso en la Pizarra (Sin Saltarse Nada):
+          {/* PROCEDIMIENTO Y RESOLUCIÓN EN PIZARRA */}
+          <div className="bg-[#0f1f16] border border-[#23432e] p-6 sm:p-8 rounded-2xl space-y-6 shadow-inner">
+            <div className="flex items-center justify-between border-b border-[#23432e] pb-3">
+              <span className="text-xs font-mono text-[#d2e2d7] uppercase tracking-wider font-bold">
+                Paso a paso en la pizarra:
               </span>
-              <span className="text-[11px] font-mono text-amber-400/90">
-                La tiza escribe exactamente lo que ocurre
+              <span className="text-[11px] font-mono text-[#fef08a] font-medium">
+                Sin saltarse nada
               </span>
             </div>
 
             {/* CASO SUMA */}
             {op === '+' && (
               <div className="space-y-6">
-                {/* PASO 1: LA PREGUNTA ORIGINAL Y LA INYECCIÓN DEL 1 */}
-                <div className="bg-slate-950/80 p-4 sm:p-5 rounded-xl border border-slate-800/80 space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-400">
-                    <span className="text-amber-400 font-bold">PASO 1: Inyectar el 1 que no altera el valor</span>
-                    <span className="text-slate-500">x × 1 = x</span>
+                {/* PASO 1 */}
+                <div className="bg-[#162a1e] p-4 sm:p-5 rounded-xl border border-[#2b5138] space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#9eb6a7]">
+                    <span className="text-[#fef08a] font-bold">PASO 1: Multiplicar por el 1 que no cambia nada</span>
+                    <span className="text-[#7a9985]">x × 1 = x</span>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-2xl font-serif text-white py-2">
-                    {/* TÉRMINO A CON SU 1 */}
-                    <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-700/80">
+                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-2xl font-serif text-[#f5f7f2] py-2">
+                    <div className="flex items-center gap-2 bg-[#0f1f16] px-3 py-2 rounded-xl border border-[#23432e]">
                       <MathFraction numerator={numA} denominator={denA} size="lg" variant="chalk" />
-                      <span className="text-slate-400 text-sm font-sans font-bold">×</span>
-                      <div className="bg-amber-400/15 border border-amber-400/40 px-2 py-0.5 rounded-lg flex items-center">
+                      <span className="text-[#8ea797] text-sm font-sans font-bold">×</span>
+                      <div className="bg-[#1a3325] border border-[#3d6e4f] px-2 py-0.5 rounded-lg flex items-center">
                         <MathFraction numerator={factorA} denominator={factorA} size="lg" variant="accent" />
                       </div>
                     </div>
 
-                    <span className="text-2xl font-mono text-slate-400 font-bold">+</span>
+                    <span className="text-2xl font-mono text-[#fde047] font-bold">+</span>
 
-                    {/* TÉRMINO B CON SU 1 */}
-                    <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-700/80">
+                    <div className="flex items-center gap-2 bg-[#0f1f16] px-3 py-2 rounded-xl border border-[#23432e]">
                       <MathFraction numerator={numB} denominator={denB} size="lg" variant="chalk" />
-                      <span className="text-slate-400 text-sm font-sans font-bold">×</span>
-                      <div className="bg-emerald-400/15 border border-emerald-400/40 px-2 py-0.5 rounded-lg flex items-center">
+                      <span className="text-[#8ea797] text-sm font-sans font-bold">×</span>
+                      <div className="bg-[#1a3325] border border-[#3d6e4f] px-2 py-0.5 rounded-lg flex items-center">
                         <MathFraction numerator={factorB} denominator={factorB} size="lg" variant="accent" />
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-400 text-center font-mono">
-                    Multiplicamos el primer término por <strong className="text-amber-300">({factorA}/{factorA})</strong> y el segundo por <strong className="text-emerald-300">({factorB}/{factorB})</strong>. Son dos "Unos". No modificamos la cantidad de pastel.
+                  <p className="text-xs text-[#c6dcce] text-center font-mono">
+                    Multiplicamos el primero por <strong className="text-[#fde047]">({factorA}/{factorA})</strong> y el segundo por <strong className="text-[#86efac]">({factorB}/{factorB})</strong>. Ambos valen 1. La cantidad de comida no cambia.
                   </p>
                 </div>
 
-                {/* PASO 2: MULTIPLICACIÓN EXPLÍCITA ARRIBA Y ABAJO */}
-                <div className="bg-slate-950/80 p-4 sm:p-5 rounded-xl border border-slate-800/80 space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-400">
-                    <span className="text-amber-400 font-bold">PASO 2: Multiplicación directa de contadores y calibres</span>
-                    <span className="text-slate-500">Arriba con arriba, abajo con abajo</span>
+                {/* PASO 2 */}
+                <div className="bg-[#162a1e] p-4 sm:p-5 rounded-xl border border-[#2b5138] space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#9eb6a7]">
+                    <span className="text-[#fef08a] font-bold">PASO 2: Multiplicamos arriba y abajo</span>
+                    <span className="text-[#7a9985]">Arriba con arriba, abajo con abajo</span>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-2xl font-serif text-white py-2">
-                    <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-slate-900 rounded-xl border border-slate-800">
-                      <span className="text-lg font-serif text-amber-300">{numA} × {factorA}</span>
-                      <span className="w-full border-t border-slate-600 my-0.5" />
-                      <span className="text-lg font-serif text-slate-300">{denA} × {factorA}</span>
+                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-2xl font-serif text-[#f5f7f2] py-2">
+                    <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-[#0f1f16] rounded-xl border border-[#23432e]">
+                      <span className="text-lg font-serif text-[#fde047] font-semibold">{numA} × {factorA}</span>
+                      <span className="w-full border-t border-[#2b5138] my-0.5" />
+                      <span className="text-lg font-serif text-[#d2e2d7]">{denA} × {factorA}</span>
                     </div>
 
-                    <span className="text-2xl font-mono text-slate-400 font-bold">+</span>
+                    <span className="text-2xl font-mono text-[#8ea797] font-bold">+</span>
 
-                    <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-slate-900 rounded-xl border border-slate-800">
-                      <span className="text-lg font-serif text-emerald-300">{numB} × {factorB}</span>
-                      <span className="w-full border-t border-slate-600 my-0.5" />
-                      <span className="text-lg font-serif text-slate-300">{denB} × {factorB}</span>
+                    <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-[#0f1f16] rounded-xl border border-[#23432e]">
+                      <span className="text-lg font-serif text-[#86efac] font-semibold">{numB} × {factorB}</span>
+                      <span className="w-full border-t border-[#2b5138] my-0.5" />
+                      <span className="text-lg font-serif text-[#d2e2d7]">{denB} × {factorB}</span>
                     </div>
 
-                    <span className="text-slate-400 font-serif">=</span>
+                    <span className="text-[#8ea797] font-serif">=</span>
 
                     <MathFraction numerator={scaledNumA} denominator={scaledDenA} size="lg" variant="chalk" />
-                    <span className="text-slate-400 font-serif">+</span>
+                    <span className="text-[#8ea797] font-serif">+</span>
                     <MathFraction numerator={scaledNumB} denominator={scaledDenB} size="lg" variant="chalk" />
                   </div>
                 </div>
 
-                {/* PASO 3: SUMA DIRECTA CON MISMA BASE */}
+                {/* PASO 3 */}
                 {sameBase ? (
-                  <div className="bg-amber-400/5 p-4 sm:p-6 rounded-xl border border-amber-400/30 space-y-3">
+                  <div className="bg-[#1c3827] p-4 sm:p-6 rounded-xl border border-[#2e593e] space-y-3">
                     <div className="flex items-center justify-between text-xs font-mono">
-                      <span className="text-amber-300 font-bold">PASO 3: ¡Mismo calibre conseguido ({scaledDenA})!</span>
-                      <span className="text-slate-400 font-mono">Contamos los pedazos</span>
+                      <span className="text-[#fef08a] font-bold">PASO 3: ¡Mismo tamaño conseguido ({scaledDenA})!</span>
+                      <span className="text-[#c6dcce] font-mono">Contamos las rebanadas</span>
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-3xl font-serif text-white py-2">
+                    <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-3xl font-serif text-[#f5f7f2] py-2">
                       <MathFraction numerator={scaledNumA} denominator={scaledDenA} size="lg" variant="chalk" />
-                      <span className="text-slate-400">+</span>
+                      <span className="text-[#8ea797]">+</span>
                       <MathFraction numerator={scaledNumB} denominator={scaledDenA} size="lg" variant="chalk" />
-                      <span className="text-slate-400">=</span>
-                      <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-slate-900 rounded-xl border border-slate-700">
-                        <span className="text-xl sm:text-2xl font-serif text-amber-300">{scaledNumA} + {scaledNumB}</span>
-                        <span className="w-full border-t border-slate-600 my-0.5" />
-                        <span className="text-xl sm:text-2xl font-serif text-slate-300">{scaledDenA}</span>
+                      <span className="text-[#8ea797]">=</span>
+                      <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-[#14281c] rounded-xl border border-[#3b6b4c]">
+                        <span className="text-xl sm:text-2xl font-serif text-[#fef08a] font-bold">{scaledNumA} + {scaledNumB}</span>
+                        <span className="w-full border-t border-[#2b5138] my-0.5" />
+                        <span className="text-xl sm:text-2xl font-serif text-[#d2e2d7]">{scaledDenA}</span>
                       </div>
-                      <span className="text-slate-400">=</span>
+                      <span className="text-[#8ea797]">=</span>
                       <MathFraction
                         numerator={scaledNumA + scaledNumB}
                         denominator={scaledDenA}
@@ -1077,13 +1064,13 @@ export const DigitalBlackboard: React.FC = () => {
                       />
                     </div>
 
-                    <p className="text-xs text-slate-300 text-center max-w-xl mx-auto font-mono">
-                      Como ambas fracciones ya tienen el mismo calibre ({scaledDenA}), no tocamos el denominador. Se suman únicamente los contadores de arriba ({scaledNumA} + {scaledNumB} = {scaledNumA + scaledNumB}). ¡Misión cumplida sin fórmulas ciegas!
+                    <p className="text-xs text-[#c6dcce] text-center max-w-xl mx-auto font-mono">
+                      Como ambas fracciones ya están cortadas al mismo tamaño ({scaledDenA}), el número de abajo se queda igual. Solo sumas los pedazos de arriba ({scaledNumA} + {scaledNumB} = {scaledNumA + scaledNumB}). ¡Listo, sin fórmulas raras!
                     </p>
                   </div>
                 ) : (
-                  <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800 text-center text-xs text-slate-400 font-mono">
-                    Los calibres aún no coinciden ({scaledDenA} ≠ {scaledDenB}). Pulsa el botón "Aplicar el 1 y Emparejar Bases" arriba para completar el paso 3.
+                  <div className="bg-[#162a1e] p-4 rounded-xl border border-[#2b5138] text-center text-xs text-[#9eb6a7] font-mono">
+                    Los tamaños no coinciden todavía ({scaledDenA} ≠ {scaledDenB}). Toca el botón "Cortar al mismo tamaño" arriba para completar el paso 3.
                   </div>
                 )}
               </div>
@@ -1092,63 +1079,63 @@ export const DigitalBlackboard: React.FC = () => {
             {/* CASO RESTA */}
             {op === '-' && (
               <div className="space-y-6">
-                <div className="bg-slate-950/80 p-4 sm:p-5 rounded-xl border border-slate-800/80 space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-400">
-                    <span className="text-amber-400 font-bold">PASO 1: Inyectar el 1 para igualar calibres</span>
-                    <span className="text-slate-500">x × 1 = x</span>
+                <div className="bg-[#162a1e] p-4 sm:p-5 rounded-xl border border-[#2b5138] space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#9eb6a7]">
+                    <span className="text-[#fef08a] font-bold">PASO 1: Usar el 1 para igualar los tamaños</span>
+                    <span className="text-[#7a9985]">x × 1 = x</span>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-2xl font-serif text-white py-2">
-                    <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-700/80">
+                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-2xl font-serif text-[#f5f7f2] py-2">
+                    <div className="flex items-center gap-2 bg-[#0f1f16] px-3 py-2 rounded-xl border border-[#23432e]">
                       <MathFraction numerator={numA} denominator={denA} size="lg" variant="chalk" />
-                      <span className="text-slate-400 text-sm font-sans font-bold">×</span>
-                      <div className="bg-amber-400/15 border border-amber-400/40 px-2 py-0.5 rounded-lg flex items-center">
+                      <span className="text-[#8ea797] text-sm font-sans font-bold">×</span>
+                      <div className="bg-[#1a3325] border border-[#3d6e4f] px-2 py-0.5 rounded-lg flex items-center">
                         <MathFraction numerator={factorA} denominator={factorA} size="lg" variant="accent" />
                       </div>
                     </div>
 
-                    <span className="text-2xl font-mono text-slate-400 font-bold">-</span>
+                    <span className="text-2xl font-mono text-[#fde047] font-bold">-</span>
 
-                    <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-700/80">
+                    <div className="flex items-center gap-2 bg-[#0f1f16] px-3 py-2 rounded-xl border border-[#23432e]">
                       <MathFraction numerator={numB} denominator={denB} size="lg" variant="chalk" />
-                      <span className="text-slate-400 text-sm font-sans font-bold">×</span>
-                      <div className="bg-emerald-400/15 border border-emerald-400/40 px-2 py-0.5 rounded-lg flex items-center">
+                      <span className="text-[#8ea797] text-sm font-sans font-bold">×</span>
+                      <div className="bg-[#1a3325] border border-[#3d6e4f] px-2 py-0.5 rounded-lg flex items-center">
                         <MathFraction numerator={factorB} denominator={factorB} size="lg" variant="accent" />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-slate-950/80 p-4 sm:p-5 rounded-xl border border-slate-800/80 space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-400">
-                    <span className="text-amber-400 font-bold">PASO 2: Multiplicación de numeradores y denominadores</span>
+                <div className="bg-[#162a1e] p-4 sm:p-5 rounded-xl border border-[#2b5138] space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#9eb6a7]">
+                    <span className="text-[#fef08a] font-bold">PASO 2: Multiplicamos arriba y abajo</span>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-2xl font-serif text-white py-2">
+                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-2xl font-serif text-[#f5f7f2] py-2">
                     <MathFraction numerator={scaledNumA} denominator={scaledDenA} size="lg" variant="chalk" />
-                    <span className="text-slate-400 font-serif">-</span>
+                    <span className="text-[#8ea797] font-serif">-</span>
                     <MathFraction numerator={scaledNumB} denominator={scaledDenB} size="lg" variant="chalk" />
                   </div>
                 </div>
 
                 {sameBase ? (
-                  <div className="bg-rose-400/5 p-4 sm:p-6 rounded-xl border border-rose-400/30 space-y-3">
+                  <div className="bg-[#1c3827] p-4 sm:p-6 rounded-xl border border-[#2e593e] space-y-3">
                     <div className="flex items-center justify-between text-xs font-mono">
-                      <span className="text-rose-300 font-bold">PASO 3: Resta de contadores</span>
-                      <span className="text-slate-400 font-mono">Misma base {scaledDenA}</span>
+                      <span className="text-[#fef08a] font-bold">PASO 3: Resta directa</span>
+                      <span className="text-[#c6dcce] font-mono">Mismo corte {scaledDenA}</span>
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-3xl font-serif text-white py-2">
+                    <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xl sm:text-3xl font-serif text-[#f5f7f2] py-2">
                       <MathFraction numerator={scaledNumA} denominator={scaledDenA} size="lg" variant="chalk" />
-                      <span className="text-slate-400">-</span>
+                      <span className="text-[#8ea797]">-</span>
                       <MathFraction numerator={scaledNumB} denominator={scaledDenA} size="lg" variant="chalk" />
-                      <span className="text-slate-400">=</span>
-                      <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-slate-900 rounded-xl border border-slate-700">
-                        <span className="text-xl sm:text-2xl font-serif text-rose-300">{scaledNumA} - {scaledNumB}</span>
-                        <span className="w-full border-t border-slate-600 my-0.5" />
-                        <span className="text-xl sm:text-2xl font-serif text-slate-300">{scaledDenA}</span>
+                      <span className="text-[#8ea797]">=</span>
+                      <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-[#14281c] rounded-xl border border-[#3b6b4c]">
+                        <span className="text-xl sm:text-2xl font-serif text-[#fef08a] font-bold">{scaledNumA} - {scaledNumB}</span>
+                        <span className="w-full border-t border-[#2b5138] my-0.5" />
+                        <span className="text-xl sm:text-2xl font-serif text-[#d2e2d7]">{scaledDenA}</span>
                       </div>
-                      <span className="text-slate-400">=</span>
+                      <span className="text-[#8ea797]">=</span>
                       <MathFraction
                         numerator={scaledNumA - scaledNumB}
                         denominator={scaledDenA}
@@ -1158,8 +1145,8 @@ export const DigitalBlackboard: React.FC = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800 text-center text-xs text-slate-400 font-mono">
-                    Iguala las bases con los factores k/k para restar directamente.
+                  <div className="bg-[#162a1e] p-4 rounded-xl border border-[#2b5138] text-center text-xs text-[#9eb6a7] font-mono">
+                    Corta al mismo tamaño primero para restar directamente.
                   </div>
                 )}
               </div>
@@ -1168,17 +1155,17 @@ export const DigitalBlackboard: React.FC = () => {
             {/* CASO MULTIPLICACIÓN */}
             {op === '×' && (
               <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-center gap-4 text-2xl font-serif text-white py-2">
+                <div className="flex flex-wrap items-center justify-center gap-4 text-2xl font-serif text-[#f5f7f2] py-2">
                   <MathFraction numerator={numA} denominator={denA} size="lg" variant="chalk" />
-                  <span className="text-amber-400 font-sans font-bold">×</span>
+                  <span className="text-[#fde047] font-sans font-bold">×</span>
                   <MathFraction numerator={numB} denominator={denB} size="lg" variant="chalk" />
-                  <span className="text-slate-500">=</span>
-                  <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-slate-900 rounded-xl border border-slate-800">
-                    <span className="text-xl font-serif text-amber-300">{numA} × {numB}</span>
-                    <span className="w-full border-t border-slate-600 my-0.5" />
-                    <span className="text-xl font-serif text-slate-300">{denA} × {denB}</span>
+                  <span className="text-[#8ea797]">=</span>
+                  <div className="inline-flex flex-col items-center justify-center px-3 py-1 bg-[#14281c] rounded-xl border border-[#2b5138]">
+                    <span className="text-xl font-serif text-[#fef08a] font-semibold">{numA} × {numB}</span>
+                    <span className="w-full border-t border-[#2b5138] my-0.5" />
+                    <span className="text-xl font-serif text-[#d2e2d7]">{denA} × {denB}</span>
                   </div>
-                  <span className="text-slate-500">=</span>
+                  <span className="text-[#8ea797]">=</span>
                   <MathFraction
                     numerator={numA * numB}
                     denominator={denA * denB}
@@ -1186,8 +1173,8 @@ export const DigitalBlackboard: React.FC = () => {
                     variant="accent"
                   />
                 </div>
-                <p className="text-xs text-slate-400 text-center max-w-xl mx-auto font-mono">
-                  Multiplicación directa en línea recta: numerador por numerador ({numA} × {numB} = {numA * numB}) y denominador por denominador ({denA} × {denB} = {denA * denB}). No requiere igualar bases porque se calcula una fracción de otra fracción.
+                <p className="text-xs text-[#c6dcce] text-center max-w-xl mx-auto font-mono">
+                  En línea recta: arriba con arriba ({numA} × {numB} = {numA * numB}) y abajo con abajo ({denA} × {denB} = {denA * denB}). No necesitas igualar nada porque tomas una rebanada de otra rebanada.
                 </p>
               </div>
             )}
@@ -1195,17 +1182,17 @@ export const DigitalBlackboard: React.FC = () => {
             {/* CASO DIVISIÓN */}
             {op === '÷' && (
               <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-center gap-4 text-2xl font-serif text-white py-2">
+                <div className="flex flex-wrap items-center justify-center gap-4 text-2xl font-serif text-[#f5f7f2] py-2">
                   <MathFraction numerator={numA} denominator={denA} size="lg" variant="chalk" />
-                  <span className="text-slate-500 font-mono">÷</span>
+                  <span className="text-[#8ea797] font-mono">÷</span>
                   <MathFraction numerator={numB} denominator={denB} size="lg" variant="chalk" />
-                  <span className="text-slate-500">→</span>
+                  <span className="text-[#8ea797]">→</span>
                   <MathFraction numerator={numA} denominator={denA} size="lg" variant="chalk" />
-                  <span className="text-amber-400 font-sans font-bold text-xl">×</span>
-                  <div className="border border-amber-400/40 bg-amber-400/10 px-1.5 py-0.5 rounded-lg">
+                  <span className="text-[#fde047] font-sans font-bold text-xl">×</span>
+                  <div className="border border-[#3d6e4f] bg-[#1a3325] px-1.5 py-0.5 rounded-lg">
                     <MathFraction numerator={denB} denominator={numB} size="lg" variant="accent" />
                   </div>
-                  <span className="text-slate-500">=</span>
+                  <span className="text-[#8ea797]">=</span>
                   <MathFraction
                     numerator={numA * denB}
                     denominator={denA * numB}
@@ -1213,8 +1200,8 @@ export const DigitalBlackboard: React.FC = () => {
                     variant="accent"
                   />
                 </div>
-                <p className="text-xs text-slate-400 text-center max-w-xl mx-auto font-mono">
-                  La división se transforma en una multiplicación invirtiendo la segunda fracción ({numB}/{denB} → {denB}/{numB}). Luego se multiplica en línea recta con el signo <strong className="text-amber-300">×</strong>.
+                <p className="text-xs text-[#c6dcce] text-center max-w-xl mx-auto font-mono">
+                  La división se convierte en multiplicación dando vuelta la segunda fracción ({numB}/{denB} → {denB}/{numB}). Luego multiplicas en línea recta como siempre.
                 </p>
               </div>
             )}

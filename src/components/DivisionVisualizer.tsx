@@ -88,26 +88,25 @@ export const DivisionVisualizer: React.FC<DivisionVisualizerProps> = ({
   const simpDen = rawDenRes / divisor;
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-6 p-4 bg-slate-950/90 rounded-2xl border border-slate-800">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-6 p-5 bg-[#172c20] rounded-2xl border border-[#2b513a]">
       {/* GRÁFICO SUPERPUESTO */}
       <div className="relative flex flex-col items-center">
-        <svg width={size} height={size} className="drop-shadow-lg overflow-visible">
+        <svg width={size} height={size} className="overflow-visible">
           {/* Círculo base de fondo tenue (el pastel completo) */}
           <circle
             cx={center}
             cy={center}
             r={radius}
-            fill="rgba(15, 23, 42, 0.6)"
-            stroke="rgba(148, 163, 184, 0.2)"
-            strokeWidth="1.5"
-            strokeDasharray="3 3"
+            fill="rgba(255, 255, 255, 0.03)"
+            stroke="#3d684e"
+            strokeWidth="1.25"
           />
 
-          {/* Porción que tienes: Pastel A en amarillo translúcido */}
+          {/* Porción que tienes: Pastel A en tiza amarilla cálida translúcida */}
           <path
             d={pathA}
-            fill="rgba(251, 191, 36, 0.25)"
-            stroke="#fbbf24"
+            fill="rgba(253, 224, 71, 0.25)"
+            stroke="#fef08a"
             strokeWidth="2"
           />
 
@@ -121,9 +120,9 @@ export const DivisionVisualizer: React.FC<DivisionVisualizerProps> = ({
               <g key={idx}>
                 <path
                   d={seg.path}
-                  fill={isFull ? 'rgba(52, 211, 153, 0.7)' : 'rgba(244, 63, 94, 0.65)'}
-                  stroke={isFull ? '#34d399' : '#f43f5e'}
-                  strokeWidth="2"
+                  fill={isFull ? 'rgba(167, 243, 208, 0.8)' : 'rgba(252, 165, 165, 0.75)'}
+                  stroke={isFull ? '#6ee7b7' : '#f87171'}
+                  strokeWidth="1.75"
                   strokeDasharray={isFull ? undefined : '2 2'}
                 />
                 {/* Etiqueta dentro de la rebanada */}
@@ -131,7 +130,7 @@ export const DivisionVisualizer: React.FC<DivisionVisualizerProps> = ({
                   x={midX}
                   y={midY + 4}
                   textAnchor="middle"
-                  fill="#ffffff"
+                  fill="#112017"
                   fontSize="10"
                   fontFamily="monospace"
                   fontWeight="bold"
@@ -143,57 +142,57 @@ export const DivisionVisualizer: React.FC<DivisionVisualizerProps> = ({
           })}
 
           {/* Centro del pastel */}
-          <circle cx={center} cy={center} r={3.5} fill="#fde68a" />
+          <circle cx={center} cy={center} r={3.5} fill="#fef08a" />
         </svg>
 
-        <span className="text-[11px] font-mono text-slate-400 mt-2">
-          Pastel superpuesto: Encaje exacto
+        <span className="text-[11px] font-mono text-[#a3bfae] mt-2 font-medium">
+          Encaje exacto de pedazos
         </span>
       </div>
 
       {/* EXPLICACIÓN LADO A LADO */}
       <div className="flex-1 space-y-3 text-left">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-mono text-amber-300 font-bold uppercase tracking-wider">
-            ¿Cómo se lee visualmente?
+          <span className="text-xs font-mono text-[#f5f7f2] font-bold uppercase tracking-wider">
+            ¿Cómo se entiende esto?
           </span>
         </div>
 
-        <ul className="space-y-2 text-xs font-mono text-slate-300">
+        <ul className="space-y-2 text-xs font-mono text-[#d2e2d7]">
           <li className="flex items-start gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-400 mt-1 shrink-0" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#fde047] mt-1 shrink-0" />
             <span>
-              Tienes un pedazo amarillo de <strong><MathFraction numerator={numA} denominator={denA} size="sm" variant="accent" /></strong> del pastel total.
+              Tienes un trozo de pastel de <strong><MathFraction numerator={numA} denominator={denA} size="sm" variant="accent" /></strong>.
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 mt-1 shrink-0" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#a7f3d0] mt-1 shrink-0" />
             <span>
-              Tu molde o medida patrón verde es de <strong><MathFraction numerator={numB} denominator={denB} size="sm" variant="chalk" /></strong>.
+              Tu molde o porción a medir es de <strong><MathFraction numerator={numB} denominator={denB} size="sm" variant="chalk" /></strong>.
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 mt-1 shrink-0" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#93c5fd] mt-1 shrink-0" />
             <span>
-              Colocas el molde verde sobre el amarillo: 
+              ¿Cuántas veces cabe el molde en tu pastel?: 
               {fullTimes > 0 ? (
-                <> Cabe <strong>{fullTimes} vez entera</strong>{remainderFraction > 0.001 ? ` y aún le sobra un pedacito.` : ` exacta.`}</>
+                <> Cabe <strong>{fullTimes} vez entera</strong>{remainderFraction > 0.001 ? ` más una fracción de otra.` : ` justa.`}</>
               ) : (
-                <> No alcanza a caber una vez entera porque el molde es más grande que lo que tienes.</>
+                <> No cabe ni 1 vez completa porque tu molde es más grande que lo que tienes.</>
               )}
             </span>
           </li>
         </ul>
 
         {/* RESULTADO EXACTO EN FRACCIÓN DERECHA */}
-        <div className="bg-slate-900 p-3 rounded-xl border border-amber-400/30 flex items-center justify-between">
-          <span className="text-xs font-mono text-slate-400">Total de veces que cabe:</span>
+        <div className="bg-[#112017] p-3.5 rounded-xl border border-[#234330] flex items-center justify-between">
+          <span className="text-xs font-mono text-[#a3bfae]">Total de veces que cabe:</span>
           <div className="flex items-center gap-3">
             <div className="flex items-center">
               <MathFraction numerator={simpNum} denominator={simpDen} size="lg" variant="accent" />
             </div>
-            <span className="text-xs font-mono text-amber-300 font-bold">
-              ({timesFits.toFixed(2)} porciones)
+            <span className="text-xs font-mono text-[#fef08a] font-bold bg-[#1a3325] px-2 py-0.5 rounded border border-[#2d563e]">
+              ({timesFits.toFixed(2)} veces)
             </span>
           </div>
         </div>

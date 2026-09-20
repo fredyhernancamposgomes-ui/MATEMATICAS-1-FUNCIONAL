@@ -31,19 +31,18 @@ export const MathFraction: React.FC<MathFractionProps> = ({
   const computedVariant = variant || (color === 'amber' ? 'accent' : 'ink');
 
   const variantClasses = {
-    // Estilo pizarra oscura con tiza nítida
-    chalk: 'text-slate-100 font-serif',
-    // Estilo papel / pizarra blanca de alta definición
-    ink: 'text-slate-900 font-serif',
-    subtle: 'text-slate-500 font-serif',
-    accent: 'text-amber-400 font-serif',
+    // Tiza natural cálida sobre pizarra verde mate
+    chalk: 'text-[#f5f7f2] font-serif font-medium',
+    ink: 'text-[#f5f7f2] font-serif font-medium',
+    subtle: 'text-[#9ab4a3] font-serif',
+    accent: 'text-[#fde047] font-serif font-semibold',
   };
 
   const lineBorderClasses = {
-    chalk: 'border-slate-300',
-    ink: 'border-slate-800',
-    subtle: 'border-slate-300',
-    accent: 'border-amber-400',
+    chalk: 'border-[#d4ded6]',
+    ink: 'border-[#d4ded6]',
+    subtle: 'border-[#61836c]',
+    accent: 'border-[#fde047]',
   };
 
   return (
